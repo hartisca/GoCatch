@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Partida extends Model
 {
     use HasFactory;
+
+    
+    protected $fillable = [
+        'id',
+        'nom',
+        'duracio',
+        'puntsVictoria',
+        'id_mapa',
+        //timestamp?
+    ];
 }

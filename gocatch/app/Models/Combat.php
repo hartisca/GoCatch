@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Combat extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id_fita',
+        'id_equip',
+        'soldadets'        
+    ];
 }

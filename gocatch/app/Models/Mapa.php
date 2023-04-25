@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Mapa extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+    protected $fillable = [
+        'id',
+        'lat1',
+        'long1',
+        'lat2',
+        'long2'        
+    ];
 }

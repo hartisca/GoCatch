@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Fita extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'lat',
+        'long',
+        'id_partida',
+        'id_tipus' 
+        //timestamp       
+    ];
 }
