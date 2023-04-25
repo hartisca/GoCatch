@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    Log::info('Loading welcome page');
     return view('welcome');
-});
+ });
+ 
