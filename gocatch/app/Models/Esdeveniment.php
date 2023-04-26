@@ -10,9 +10,9 @@ class Esdeveniment extends Model
     use HasFactory;
     protected $fillable = [
         'id',
-        'id_partida',
+        'id_partida',//fk partida
         'id_esdeveniment',
-        'id_jugador',
+        'id_jugador',//fk jugdaor
                 //timestamp?
     ];
 }

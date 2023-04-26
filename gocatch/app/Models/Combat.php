@@ -11,8 +11,8 @@ class Combat extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_fita',
-        'id_equip',
+        'id_fita',//fk fita
+        'id_equip',//fk equip
         'soldadets'        
     ];
 }

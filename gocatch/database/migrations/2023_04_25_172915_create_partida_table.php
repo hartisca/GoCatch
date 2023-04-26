@@ -16,8 +16,7 @@ return new class extends Migration
         Schema::create('partida', function (Blueprint $table) {
             $table->id();           
             $table->string('nom');
-            $table->integer('puntsVictoria');
-            $table->integer('id_mapa');//FK ALTER TABLE
+            $table->integer('puntsVictoria');           
             $table->integer('duracio');
             $table->timestamps();
             

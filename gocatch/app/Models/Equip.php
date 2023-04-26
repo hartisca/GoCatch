@@ -11,7 +11,7 @@ class Equip extends Model
 
     protected $fillable = [
         'id',
-        'id_partida',
+        'id_partida',// fk partida
         'nom',
         'punts'        
     ];

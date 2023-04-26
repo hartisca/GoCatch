@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('mapa', function (Blueprint $table) {
             $table->id();
-            $table->integer('lat1');
-            $table->integer('long1');
-            $table->integer('lat2');
-            $table->integer('long2');
+            $table->decimal('lat1', 6, 4);
+            $table->decimal('long1', 6, 4);
+            $table->decimal('lat2', 6, 4);
+            $table->decimal('long2', 6, 4);
         });
     }
 

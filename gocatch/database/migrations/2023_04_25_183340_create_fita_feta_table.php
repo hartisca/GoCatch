@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('fita_feta', function (Blueprint $table) {
-            $table->string('id_jugador');
-            $table->string('id_fita');
+
+            $table->unsignedBigInteger('id_jugador');
+            $table->foreign('id_jugador')->references('id')->on('jugador')
+            ->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_fita');
+            $table->foreign('id_fita')->references('id')->on('fita')
+            ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

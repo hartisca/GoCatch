@@ -12,8 +12,8 @@ class Fita extends Model
         'id',
         'lat',
         'long',
-        'id_partida',
-        'id_tipus' 
+        'id_partida',//fk partida
+        'id_tipus' //fk tipusfita
         //timestamp       
     ];
 }

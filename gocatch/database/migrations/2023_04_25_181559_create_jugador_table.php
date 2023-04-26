@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('jugador', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_usuari');//FK usuari
+            $table->unsignedBigInteger('id_usuari');
+            $table->foreign('id_usuari')->references('id')->on('users')
+            ->onUpdate('cascade')->onDelete('cascade');//FK usuari
             $table->string('nom');
             $table->integer('soldadets');
             $table->string('img');
-            $table->integer('id_equip'); //fk equip
+            $table->unsignedBigInteger('id_equip');
+            $table->foreign('id_equip')->references('id')->on('equip')
+            ->onUpdate('cascade')->onDelete('cascade');//fk equip
 
         });
     }

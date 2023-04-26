@@ -12,10 +12,10 @@ class Jugador extends Model
     public $timestamps = false;
     protected $fillable = [
         'id',
-        'id_usuari',
+        'id_usuari',//fk usuari
         'nom',
         'soldadets',
         'img',
-        'id_equip' 
+        'id_equip'//fk qeuip
     ];
 }

@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipus_esdeveniments', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
+        Schema::table('partida', function (Blueprint $table){
+            $table->unsignedBigInteger('id_mapa')->after('duracio');
+            $table->foreign('id_mapa')->references('id')->on('mapa')
+            ->onUpdate('cascade')->onDelete('cascade');
         });
+
+         
     }
 
     /**
@@ -26,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipus_esdevenimenta');
+        Schema::table('fita', function (Blueprint $table) {
+            $table->dropColumn('description');
+        });
     }
 };

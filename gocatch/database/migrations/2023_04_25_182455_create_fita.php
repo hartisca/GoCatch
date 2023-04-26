@@ -13,13 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('equip', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('fita', function (Blueprint $table) {
+            $table->id();
+            $table->decimal('lat', 6, 4);
+            $table->decimal('long', 6, 4);
             $table->unsignedBigInteger('id_partida');
-            $table->foreign('id_partida')->references('id')->on('partida')//fk equip
+            $table->foreign('id_partida')->references('id')->on('partida')
+            ->onUpdate('cascade')->onDelete('cascade');    
+            $table->unsignedBigInteger('id_tipus');
+            $table->foreign('id_tipus')->references('id')->on('tipus_fita')
             ->onUpdate('cascade')->onDelete('cascade');
-            $table->string('nom');
-            $table->string('punts');
+            $table->timestamps();          
         });
     }
 
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equip');
+        Schema::dropIfExists('fita');
     }
 };

@@ -9,8 +9,8 @@ class FitaFeta extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_jugador',
-        'id_fita',
-        //timestamp?????        
+        'id_jugador',//fk jugador
+        'id_fita', //fk fita
+             
     ];
 }

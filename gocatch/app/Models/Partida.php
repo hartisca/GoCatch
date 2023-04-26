@@ -15,7 +15,7 @@ class Partida extends Model
         'nom',
         'duracio',
         'puntsVictoria',
-        'id_mapa',
+        'id_mapa', //fk mapa
         //timestamp?
     ];
 }

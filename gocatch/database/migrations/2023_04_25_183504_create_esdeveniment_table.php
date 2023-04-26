@@ -15,9 +15,15 @@ return new class extends Migration
     {
         Schema::create('esdeveniment', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_partida');//fk partida
-            $table->integer('id_jugador');// fk partida
-            $table->integer('id_esdeveniment');//fk tipusesdeveniment
+            $table->unsignedBigInteger('id_partida');
+            $table->foreign('id_partida')->references('id')->on('partida')
+            ->onUpdate('cascade')->onDelete('cascade');//fk partida
+            $table->unsignedBigInteger('id_jugador');
+            $table->foreign('id_jugador')->references('id')->on('jugador')
+            ->onUpdate('cascade')->onDelete('cascade');// fk partida
+            $table->unsignedBigInteger('id_esdeveniment');
+            $table->foreign('id_esdeveniment')->references('id')->on('tipus_esdeveniment')
+            ->onUpdate('cascade')->onDelete('cascade');//fk tipus_esdeveniment
             $table->timestamps();
         });
     }

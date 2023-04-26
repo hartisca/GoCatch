@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('combat', function (Blueprint $table) {
             //$table->id(); //crec que li falta un id o sino la pk es clau composta :S
-            $table->integer('id_fita');
-            $table->integer('id_equip');
+            $table->unsignedBigInteger('id_fita');
+            $table->foreign('id_fita')->references('id')->on('fita')
+            ->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_equip');
+            $table->foreign('id_equip')->references('id')->on('equip')
+            ->onUpdate('cascade')->onDelete('cascade');
             $table->integer('soldadets');
         });
     }
