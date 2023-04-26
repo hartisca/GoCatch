@@ -14,4 +14,7 @@ class TipusEsdeveniment extends Model
         'id',
         'nom'        
     ];
+    public function esdeveniment(){
+        return $this->hasMany(Esdeveniment::class);
+    }
 }

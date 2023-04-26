@@ -17,4 +17,7 @@ class Mapa extends Model
         'lat2',
         'long2'        
     ];
+    public function partida(){
+        return $this->hasMany(Partida::class);
+    }
 }

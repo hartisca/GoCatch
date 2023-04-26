@@ -15,4 +15,13 @@ class Esdeveniment extends Model
         'id_jugador',//fk jugdaor
                 //timestamp?
     ];
+    public function partida(){
+        return $this->belongsTo(Partida::class);
+    }
+    public function jugador(){
+        return $this->belongsTo(Jugador::class);
+    }
+    public function tipus(){
+        return $this->belongsTo(TipusEsdeveniment::class);
+    }
 }

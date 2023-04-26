@@ -13,4 +13,10 @@ class FitaFeta extends Model
         'id_fita', //fk fita
              
     ];
+    public function jugador(){
+        return $this->belongsTo(Jugador::class);
+    }
+    public function fita(){
+        return $this->belongsTo(Fita::class);
+    }
 }

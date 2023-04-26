@@ -14,4 +14,9 @@ class TipusFita extends Model
         'id',
         'nom'        
     ];
+
+
+public function fita(){
+        return $this->hasMany(Fita::class);
+    }
 }

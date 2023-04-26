@@ -15,4 +15,14 @@ class Combat extends Model
         'id_equip',//fk equip
         'soldadets'        
     ];
+
+public function fita()
+{
+    return $this->belongsTo(Fita::class);
+}
+public function equip()
+{
+    return $this->belongsTo(Equip::class);
+}
+
 }

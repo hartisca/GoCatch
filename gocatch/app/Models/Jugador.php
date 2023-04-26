@@ -18,4 +18,17 @@ class Jugador extends Model
         'img',
         'id_equip'//fk qeuip
     ];
+    public function fitaFeta(){
+        return $this->hasMany(FitaFeta::class);
+    }
+    public function esdeveniment(){
+        return $this->hasMany(Esdeveniment::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function equip(){
+        return $this->belongsTo(Equip::class);
+    }
+
 }

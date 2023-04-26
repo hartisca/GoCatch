@@ -16,4 +16,13 @@ class Fita extends Model
         'id_tipus' //fk tipusfita
         //timestamp       
     ];
+    public function combat(){
+        return $this->hasMany(Combat::class);
+    }
+    public function tipus(){
+        return $this->belongsTo(TipusFita::class);
+    }
+    public function partida(){
+        return $this->belongsTo(Partida::class);
+    }
 }

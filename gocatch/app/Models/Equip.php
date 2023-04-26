@@ -15,4 +15,9 @@ class Equip extends Model
         'nom',
         'punts'        
     ];
+    public function partida()
+    {
+    return $this->belongsTo(Partida::class);
+    }
+
 }

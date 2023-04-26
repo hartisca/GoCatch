@@ -13,9 +13,20 @@ class Partida extends Model
     protected $fillable = [
         'id',
         'nom',
-        'duracio',
         'puntsVictoria',
-        'id_mapa', //fk mapa
-        //timestamp?
+        'duracio',
+        'id_mapa', 
     ];
+    public function fita(){
+        return $this->hasMany(Fita::class);
+    }
+    public function esdeveniment(){
+        return $this->hasMany(Esdeveniment::class);
+    }
+    public function equip(){
+        return $this->hasMany(Equip::class);
+    }
+    public function mapa(){
+        return $this->belongsTo(Mapa::class);
+    }
 }
